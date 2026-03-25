@@ -15,3 +15,4 @@ from scenes._registry import SCENES_POOL
 # IMPORT SCENE MODULES HERE
 from . import flower_seller
 from . import forest_gnomes
+from . import very_cool_stick
