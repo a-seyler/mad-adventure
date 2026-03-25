@@ -61,6 +61,7 @@ def main():
         elif current_scene is None:
             sleep(2.0)
             print("\nI continue following the path...")
+            sleep(1.0)
             current_scene = game_scenes.pop(0)
             counter += 1
 

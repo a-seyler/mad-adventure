@@ -12,4 +12,6 @@ get in the game loop.
 
 from scenes._registry import SCENES_POOL
 
-# IMPORT HERE SCENES
+# IMPORT SCENE MODULES HERE
+from . import flower_seller
+from . import forest_gnomes
