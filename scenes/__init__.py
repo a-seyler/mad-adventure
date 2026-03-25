@@ -1,0 +1,15 @@
+"""
+=====================================================================
+  Scenes
+=====================================================================
+
+To make a scene available you should import it here.
+
+When adding the @registry decorator to a scene, that scene will be
+automatically included into the pool of possible random scenes to
+get in the game loop.
+"""
+
+from scenes._registry import SCENES_POOL
+
+# IMPORT HERE SCENES
