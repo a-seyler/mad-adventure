@@ -7,7 +7,6 @@
 # Imports
 import random
 import argparse
-import time
 from config import settings
 from utils import sleep
 
@@ -25,19 +24,13 @@ args = parser.parse_args()
 settings.DEBUG = args.debug
 
 
-# === Definitions ===================================================
-
-# Maximum amount of scenes
-MAX_SCENES = 5
-
-
 # === Game loop =====================================================
 
 def main():
 
     # Get the available scenes for the game
-    n_loops = MAX_SCENES // len(SCENES_POOL) + 1
-    game_scenes = random.sample(n_loops * SCENES_POOL, MAX_SCENES)
+    max_scenes = len(SCENES_POOL)
+    game_scenes = random.sample(SCENES_POOL, max_scenes)
 
     # Initialize game
     wake_up_scene()
@@ -45,7 +38,7 @@ def main():
 
     # Loop over scenes
     counter = 0
-    while counter < MAX_SCENES:
+    while counter < max_scenes:
 
         current_scene = current_scene()
 
