@@ -14,13 +14,13 @@ from utils import sleep
 @register
 def flower_seller_scene():
 
-    print(f"\nOh! there is a distinctive smell, I love it...", end=' ')
+    print(f"\nOh! there is a distinctive smell, I love it...", end=' ', flush=True)
     sleep(2.0)
     print("is that geranium?!")
     sleep(1.0)
     print("Seems like a FLOWER SELLER, huh")
     sleep(2.0)
-    print('"Look what we have here, a brave traveller...', end=' ')
+    print('"Look what we have here, a brave traveller...', end=' ', flush=True)
     sleep(1.0)
     print('would you like to buy some flowers?"')
 
@@ -34,7 +34,7 @@ def flower_seller_scene():
 # -----------------------------------------------
 
 def buy_flower():
-    print("\nI really like geraniums...", end=" ")
+    print("\nI really like geraniums...", end=" ", flush=True)
     sleep(1.0)
     print("I used to have one called Dani...")
     sleep(1.0)
