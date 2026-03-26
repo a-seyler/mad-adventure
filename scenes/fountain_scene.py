@@ -11,11 +11,11 @@ from utils import sleep
 
 # ===== Scene =======================================================
 
-@register    # You need to register the entry scene of your arc (and add the module to the scenes.__init__.py file.
+@register    
 def exploring_path_scene():
     
     print("\nOh, what is that noise?")
-    sleep(3.0) # Add some suspense by adding breaks between text (this would add a 2 seconds break)
+    sleep(3.0)
     print("I stop and close my eyes to concentrate on the sound...")
     sleep(3.0)
     print("It's coming from a little side path which leads through ...", end=' ', flush=True)
@@ -26,10 +26,10 @@ def exploring_path_scene():
     sleep(3.0)
     print("I arrive at a clearing and see a fountain, with water sparkling in the sun")
     sleep(3.0)
-    # You can add options for the player to choose from like this:
+
     next_scene = choose_option([
-        ('step closer to fountain', fountain_scene), # If you want option 1 to lead to a continuation_scene
-        ('stay safe at a distance', growling_scene)   # If you want option 2 to exit this scene and continue the game
+        ('step closer to fountain', fountain_scene), 
+        ('stay safe at a distance', growling_scene)   
     ])
 
     return next_scene
@@ -47,8 +47,8 @@ def fountain_scene():
     print("\nThe water looks cool and refreshing...")
     sleep(2.0)
     next_scene = choose_option([
-        ('drink from the fountain', refreshed_scene), # If you want option 1 to lead to a continuation_scene
-        ('throw a coin in for good luck', coin_scene)   # If you want option 2 to exit this scene and continue the game
+        ('drink from the fountain', refreshed_scene), 
+        ('throw a coin in for good luck', coin_scene)  
     ])
     return next_scene
 
@@ -66,7 +66,7 @@ def coin_scene():
     print("\nI am throwing a coin into the well")
     sleep(1.0)
 
-    coin_roll = chance_roll(25) # You can use a chance roll like this, where 25 is the probability of success
+    coin_roll = chance_roll(20) 
     
     if coin_roll:
         
@@ -83,18 +83,14 @@ def coin_scene():
         print("\nAfter awaking from blackout I return to the road...")
 
         return None
-        # When you are ready to end the scene, return:
-        #   None:  to continue the game
-        #   True:  to win the game
-        #   False: to lose the game
     
     else:
         
         print("\nI feel like I might have more luck on my journey ahead")
         sleep(2.0)
         next_scene = choose_option([
-            ('throw another coin', coin_scene), # If you want option 1 to lead to a continuation_scene
-            ('return to the road', None)   # If you want option 2 to exit this scene and continue the game
+            ('throw another coin', coin_scene), 
+            ('return to the road', None)   
         ])
 
         return next_scene
